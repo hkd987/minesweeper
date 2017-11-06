@@ -1,15 +1,18 @@
-//hardcode game board parts and pieces
-const blankLine = ' | | '
-const guessLine = '1| | '
-const bombLine = ' |B| '
+//main variables
+function printBoard(board) {
+  console.log('Current Board:');
+  console.log(board[0].join(' | '));
+  console.log(board[1].join(' | '));
+  console.log(board[2].join(' | '));
+}
+let board = [ [' ', ' ', ' '],
+              [' ', ' ', ' '],
+              [' ', ' ', ' '] ]
 
-//log message about empty game piece
-console.log('This is what an empty board would look like:');
-console.log(blankLine);
-console.log(blankLine);
-console.log(blankLine);
-//Log message about bomb game board
-console.log('This is what a board with a guess and a bomb on it would look like:');
-console.log(guessLine);
-console.log(bombLine);
-console.log(blankLine);
+//see game board
+printBoard(board)
+
+board[0][1] = '1'
+board[2][2] = 'B'
+
+printBoard(board)
